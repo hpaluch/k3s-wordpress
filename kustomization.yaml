@@ -1,0 +1,14 @@
+# kustomization.yaml
+# based on: https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/
+---
+namespace: wp1
+
+secretGenerator:
+- name: mysql-pass
+  literals:
+    - password=YOUR_PASSWORD
+
+resources:
+  - mysql-deployment.yaml
+  - wordpress-deployment.yaml
+
