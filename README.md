@@ -54,8 +54,23 @@ $ kubectl api-resources
 
 # see all pods (collocated containers) in all namespaces:
 $ kubectl get pods -A
-```
 
+# see CPU and memory usage by Pods:
+$ kubectl top pod -A
+
+AMESPACE     NAME                                      CPU(cores)   MEMORY(bytes)
+kube-system   coredns-d76bd69b-bnrkh                    3m           21Mi
+kube-system   local-path-provisioner-6c79684f77-2rqhq   1m           14Mi
+kube-system   metrics-server-7cd5fcb6b7-j27nh           10m          30Mi
+kube-system   svclb-traefik-6v2fn                       0m           0Mi
+kube-system   traefik-df4ff85d6-7nqhc                   1m           32Mi
+
+# see Node utilization:
+$ kubectl top node
+
+NAME      CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%
+d11-k3s   121m         12%    2815Mi          71%
+```
 
 # Deploying WordPress Example
 
